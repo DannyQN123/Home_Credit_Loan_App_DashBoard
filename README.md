@@ -8,9 +8,9 @@
 - This segment of applicants also have the top 5 highest default rate (about 10.58%).
 
 ## Tools used:
-- Python: used for checking for missing values (Number of missing values for each column). 
-- SQLite: particularly DB Browser for SQLite. As our Dataset is in CSV format, create a database from these .CSV files is simple with SQLite.
-- PowerBI: for Dashboard Visualization.
+- ***Python:*** used for checking for missing values (Number of missing values for each column). 
+- ***SQLite:*** particularly DB Browser for SQLite. As our Dataset is in CSV format, create a database from these .CSV files is simple with SQLite.
+- ***PowerBI:*** for Dashboard Visualization.
   
 ## Python script for checking missing values:
 ```Python
