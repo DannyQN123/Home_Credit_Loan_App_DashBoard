@@ -7,18 +7,72 @@
 Original datasets: https://www.kaggle.com/c/home-credit-default-risk
 ## SQL Queries:  
 
-- Number of Applicants by ***Family Status***:  
-`SELECT NAME_FAMILY_STATUS, COUNT(NAME_FAMILY_STATUS) AS Number_of_Applications
+- Number of Applicants (Thounsands) by ***Family Status***:  
+```SQL
+SELECT NAME_FAMILY_STATUS, COUNT(NAME_FAMILY_STATUS) AS Number_of_Applications
 FROM application_train
 GROUP BY NAME_FAMILY_STATUS
-ORDER BY Number_of_Applications DESC`  
+ORDER BY Number_of_Applications DESC`
+```
 
-- Number of Applicants by ***Occupation Type***:  
-`SELECT OCCUPATION_TYPE, COUNT(OCCUPATION_TYPE) AS Number_of_Applications
+- Number of Applicants (Thounsands) by ***Occupation Type***:  
+```SQL
+SELECT OCCUPATION_TYPE, COUNT(OCCUPATION_TYPE) AS Number_of_Applications
 FROM application_train  
 GROUP BY OCCUPATION_TYPE  
 HAVING OCCUPATION_TYPE NOT NULL  
-ORDER BY Number_of_Applications ASC`  
+ORDER BY Number_of_Applications ASC`
+```
+
+- Number of Applicants (Thounsands) by ***Income Type***:  
+```SQL
+SELECT NAME_INCOME_TYPE, COUNT(NAME_INCOME_TYPE) AS Number_of_Applications
+FROM application_train
+GROUP BY NAME_INCOME_TYPE
+ORDER BY Number_of_Applications ASC
+```
+
+- Default Rate (%) by ***Family Status***:  
+```SQL
+SELECT
+    NAME_FAMILY_STATUS,
+    ROUND((SUM(CASE WHEN TARGET = 1 THEN 1 ELSE 0 END) * 100.0 / COUNT(NAME_FAMILY_STATUS)), 2) AS Default_Rate
+FROM
+    application_train
+GROUP BY
+    NAME_FAMILY_STATUS
+HAVING NAME_FAMILY_STATUS NOT LIKE "%Unknown%"
+ORDER BY 
+	Default_Rate ASC
+```
+
+- Default Rate (%) by ***Occupation Type***:  
+```SQL
+SELECT
+    OCCUPATION_TYPE,
+    ROUND((SUM(CASE WHEN TARGET = 1 THEN 1 ELSE 0 END) * 100.0 / COUNT(OCCUPATION_TYPE)), 2) AS Default_Rate
+FROM
+    application_train
+GROUP BY
+    OCCUPATION_TYPE
+HAVING OCCUPATION_TYPE NOT NULL
+ORDER BY 
+	Default_Rate ASC
+```
+
+- Default Rate (%) by ***Income Type***:  
+```SQL
+SELECT
+    NAME_INCOME_TYPE,
+    ROUND((SUM(CASE WHEN TARGET = 1 THEN 1 ELSE 0 END) * 100.0 / COUNT(NAME_INCOME_TYPE)), 2) AS Default_Rate
+FROM
+    application_train
+GROUP BY
+    NAME_INCOME_TYPE
+HAVING NAME_INCOME_TYPE NOT NULL
+ORDER BY 
+	Default_Rate ASC
+```
 
 ## Dashboards:  
 ***DashBoard - Applications & Default Rate by Income Type and Family Status***  
