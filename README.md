@@ -1,10 +1,12 @@
 # Home_Credit_Loan_Applicant_DashBoard  
 - ***The purpose of the project is:*** to create Dashboards to gain some insights on Home Credit's loan applicants. Because the datasets is plenty, we will only focus on the ***application_train.csv***.   
-- Basically we will conduct Exploratory Data Analysis to analyze the loan applicants' background.  
+- Basically we will conduct Exploratory Data Analysis to analyze the loan applicants' background.
+- Original datasets: https://www.kaggle.com/c/home-credit-default-risk.
+
 ## The conclusion:
-- A large percentage of the applicants of Home Credit's Loan are laborer, and they are married.
--  
-Original datasets: https://www.kaggle.com/c/home-credit-default-risk
+- The largest customer segment by Occupation Type are laborers (26.14%). 
+- This segment of applicants also have the top 5 highest default rate (about 10.58%).
+
 ## SQL Queries:  
 
 - Number of Applicants (Thounsands) by ***Family Status***:  
