@@ -3,7 +3,7 @@
 - Basically we will conduct Exploratory Data Analysis to analyze the loan applicants' background.
 - Original datasets: https://www.kaggle.com/c/home-credit-default-risk.
 
-## The conclusions (still updating):
+## The conclusions (updating):
 - The largest customer segment by Occupation Type are laborers (26.14%). 
 - This segment of applicants also have the top 5 highest default rate (about 10.58%).
 
